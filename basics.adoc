@@ -1,0 +1,39 @@
+= Sharing and consuming a container image
+
+```
+$ docker pull nginx
+                                                                                                                                                                   
+```
+
+== Inspecting an image
+
+....
+$ docker inspect nginx:latest
+....
+
+serving a custom static html file. Create a folder and copy and save the html text as index.html
+
+```
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title> Container Basics </title>
+</head>
+<body>
+  <h2> Hello from Nginx container </h2>
+</body>
+</html>
+
+....
+$ docker run -it --rm -d -p 8080:80 --name web -v ~/lab1:/usr/share/nginx/html nginx
+....
+
+2 == 
+to check that. If that is not the case use `oc project bootcamp` to switch
+
+
+== Create an application from a Docker Image
+
+....
+$ oc new-app redhatworkshops/welcome-php --name=welcome

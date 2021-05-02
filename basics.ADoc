@@ -1,3 +1,0 @@
-Sharing and consuming a container image
-
-# docker pull nginx
