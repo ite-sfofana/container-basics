@@ -1,4 +1,6 @@
-= Sharing and consuming a container image
+= Container Basics
+
+== 1. Sharing and consuming a container image
 
 ```
 $ docker pull nginx
@@ -31,11 +33,15 @@ serving a custom static html file. Create a folder and copy and save the html te
 $ docker run -it --rm -d -p 8080:80 --name web -v ~/lab1:/usr/share/nginx/html nginx
 ....
 
-2 == 
-to check that. If that is not the case use `oc project bootcamp` to switch
+to check that.
+
+== 2. Create Container from Dockerfile
 
 
-== Create an application from a Docker Image
+ `oc project bootcamp` to switch
+
+
+== 3. Create an application from a Docker Image
 
 ....
 $ oc new-app redhatworkshops/welcome-php --name=welcome
