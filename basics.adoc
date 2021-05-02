@@ -25,6 +25,8 @@ serving a custom static html file. Create a folder and copy and save the html te
 </body>
 </html>
 
+```
+
 ....
 $ docker run -it --rm -d -p 8080:80 --name web -v ~/lab1:/usr/share/nginx/html nginx
 ....
