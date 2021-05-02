@@ -38,7 +38,6 @@ create a Dockerfile and paste the below text into it.
  ```
  FROM nginx:latest
  COPY ./index.html /usr/share/nginx/html/index.html
- 
  ```
 
 run build the image
@@ -49,11 +48,14 @@ $ docker build -t webserver .
 
 Now we can run a webserver
 
-...
+....
 $ docker run -it --rm -d -p 8080:80 --name web webserver
-...
+....
 
-== 3. Create an application from a Docker Image
+== 3. Publishing our image
+
 
 ....
-$ oc new-app redhatworkshops/welcome-php --name=welcome
+$ docker login
+$ docker tag local-image repo/imageName
+$ docker push repo/ImageName
