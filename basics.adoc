@@ -26,20 +26,23 @@ serving a custom static html file. Create a folder and copy and save the html te
   <h2> Hello from Nginx container </h2>
 </body>
 </html>
-
 ```
-
 ....
 $ docker run -it --rm -d -p 8080:80 --name web -v ~/lab1:/usr/share/nginx/html nginx
 ....
 
-to check that.
-
 == 2. Create Container from Dockerfile
 
+create a Dockerfile and paste the below text into it.
 
- `oc project bootcamp` to switch
-
+ ```
+ FROM nginx:latest
+ COPY ./index.html /usr/share/nginx/html/index.html
+ ```
+run build the image
+....
+$ docker build -t webserver .
+....
 
 == 3. Create an application from a Docker Image
 
